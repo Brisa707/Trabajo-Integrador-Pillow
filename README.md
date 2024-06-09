@@ -1,18 +1,18 @@
-REPOSITORIO PARA ENTREGA DE TRABAJO INTEGRADOR GRUPAL || COMISIÓN 1.
+# REPOSITORIO PARA ENTREGA DE TRABAJO INTEGRADOR GRUPAL || COMISIÓN 1.
 
-#Tema: Pillow - Manipulación de imágenes en python.
+# Tema: Pillow - Manipulación de imágenes en python.
 
-#Integrantes:
+# Integrantes:
 
-Brisa Nahir Valero.
+- Brisa Nahir Valero.
 
-Rocío Soledad Maldonado.
+- Rocío Soledad Maldonado.
 
-Javier Quiroga.
+- Javier Quiroga.
 
-# Proyecto de Manipulación de Imágenes con Pillow
-
-Este proyecto demuestra cómo usar la biblioteca Pillow en Python para realizar operaciones básicas de manipulación de imágenes, tales como aplicar filtros, redimensionar, recortar y convertir imágenes a escala de grises.
+# Desarrollo de código fuente
+Problema puntual:
+Vamos a suponer que el problema que deseas resolver es aplicar filtros y realizar transformaciones básicas en una imagen, como cambiar su tamaño, recortarla, y convertirla a escala de grises.
 
 # Archivos
 
