@@ -101,10 +101,9 @@ def main():
             imagen.show()
         elif opcion == "6":
             nuevo_nombre = str(input("Ingrese un nombre: "))
-            extencion = str(input("Ingrese una extencion (JPG, PNG, GIF): "))
             print("""\033[1mCAMBIOS GUARDADOS!!!.\033[0m
                   """)
-            imagen.save(f"{nuevo_nombre}.{extencion}")
+            imagen.save(f"{nuevo_nombre}.jpg")
         elif opcion == "7":
             print("""\033[1mSALIENDO DEL PROGRAMA. CHAU!
                   \033[0m
