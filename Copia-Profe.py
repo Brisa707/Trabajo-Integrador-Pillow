@@ -2,37 +2,54 @@ from PIL import Image, ImageOps, ImageFilter
 #Yo usé la imagen C:\Repo-git\unab.jpg
 
 
-def cargar_imagen(): #Función que carga la imagen a partir de la dirección provista por el usuario.
-    ruta = input("Ingresa la ruta de la imagen: ")
-    try:
-        imagen = Image.open(ruta)
-        print("Imagen cargada exitosamente.")
-        return imagen
-    except Exception as e:
-        print(f"ERROR AL CARGAR LA IMAGEN: {e}")
-        return None
+def cargar_imagen():
+    while True:
+        ruta = str(input("Ingresa la ruta de la imagen: "))
+        try:
+            imagen = Image.open(ruta)
+            print("""\033[1mIMAGEN CARGADA EXITOSAMENTE.\033[0m
+                  """)
+            return imagen
+        except Exception:
+                        print("""\033[1mERROR AL CARGAR LA IMAGEN. INTENTE DE NUEVO.\033[0m
+                  """)
+                        opcion = input("¿Desea intentar de nuevo? S/N: ").upper()
+                        if opcion == "N":
+                            print("""\033[1mSALIENDO DEL PROGRAMA. CHAU!\033[0m
+                                  """)
+                            break
+                        elif opcion == "S":
+                            continue
+                        else:
+                            print("""\033[1mOPCIÓN NO VALIDA!!!\033[0m
+                  """)
+            
+                
 
-def cambiar_tamano(imagen): #Función que cambia el tamaño de la imagen y la abre.  
-    Porcentaje = int(input("Ingrese un porcentaje: ")) #Porcentaje del tamaño
+def cambiar_tamano(imagen):
+    Porcentaje = int(input("INGRESE UN PORCENTAJE: "))
     nueva_imagen = imagen.resize((int(imagen.width * Porcentaje / 100), int(imagen.height * Porcentaje / 100)))
-    print("Tamaño de imagen cambiado.") 
+    print("""\033[1mTAMAÑO DE LA IMAGEN CAMBIADO!!!\033[0m
+          """)
     return nueva_imagen
 
-def convertir_a_grises(imagen): #Función que convierte la imagen a escalade grises y la abre.
+def convertir_a_grises(imagen):
     nueva_imagen = ImageOps.grayscale(imagen)
-    print("Imagen convertida a escala de grises.")
+    print("""\033[1mIMAGEN CONVERTIDA A ESCALA DE GRISES!!!\033[0m
+          """)
     return nueva_imagen
 
-def rotar_imagen(imagen): #Función que rota la imagen 90° en sentido anti horario y la abre.
+def rotar_imagen(imagen):
     angulo = -90
     nueva_imagen = imagen.rotate(angulo, expand=True)
-    print("Imagen rotada.")
+    print("""\033[1mIMAGEN ROTADA. \033[0m
+          """)
     return nueva_imagen
 
-def aplicar_filtro(imagen): #Función que aplica un filtro a elección del usuario (enfocar y desenfocar) y la abre.
-    print("Selecciona un filtro: ")
-    print("1. Desenfocar")
-    print("2. Enfocar")
+def aplicar_filtro(imagen):
+    print("""SELECCIONAR UN FILTRO: 
+    1. Desenfocar
+    2. Enfocar""")
     
     filtro = input("Ingrese una opción: ")
     
@@ -43,52 +60,59 @@ def aplicar_filtro(imagen): #Función que aplica un filtro a elección del usuar
     
     if filtro in filtros:
         nueva_imagen = imagen.filter(filtros[filtro])
-        print("Filtro aplicado.")
+        print("""\033[1mFILTRO APLICADO.\033[0m
+              """)
         return nueva_imagen
     else:
-        print("OPCIÓN DE FILTRO NO VALIDA.")
+        print("""\033[1mOPCIÓN DE FILTRO NO VALIDA.\033[0m
+              """)
         return imagen
 
 def mostrar_menu():
-    print("Menú de opciones:")
+    print("MENÚ DE OPCIONES: ")
     print("1. Cambiar tamaño de la imagen")
     print("2. Convertir imagen a escala de grises")
     print("3. Rotar imagen")
     print("4. Aplicar filtro")
-    print("5. Guardar cambios")
-    print("6. Salir")
+    print("5. Mostrar cambios")
+    print("6. Guardar cambios")
+    print("""7. Salir
+          """)
 
 def main():
     imagen = cargar_imagen()
     if imagen is None:
-        print("ERROR AL CARGAR LA IMAGEN.")
+        print("")
         return
     
     while True:
         mostrar_menu()
         opcion = input("SELECCIONE UNA OPCIÓN: ")
 
-        if opcion == "1": #Cambia el tamaño de la imagen segun el porcentaje provisto por el usuario.
+        if opcion == "1":
             imagen = cambiar_tamano(imagen)
-            imagen.show()
-        elif opcion == "2": #Cambia la imagen a blanco y negro
+        elif opcion == "2":
             imagen = convertir_a_grises(imagen)
-            imagen.show()
-        elif opcion == "3": #Rota la imagen 90°
+        elif opcion == "3":
             imagen = rotar_imagen(imagen)
-            imagen.show()
-        elif opcion == "4": #Aplica un filtro a elección del usuario
+        elif opcion == "4":
             imagen = aplicar_filtro(imagen)
+        elif opcion == "5":
             imagen.show()
-        elif opcion == "5": #Permite elegir el nombre del archivo y lo guarda en formato "jpg".
-            nuevo_nombre = str(input(f"Ingrese un nombre")) 
-            print("Guardando cambios.")
-            imagen.save(f"{nuevo_nombre}.jpg")
-        elif opcion == "6": #Sale del programa sin guardar
-            print("Saliendo del programa.")
+        elif opcion == "6":
+            nuevo_nombre = str(input("Ingrese un nombre: "))
+            extencion = str(input("Ingrese una extencion (JPG, PNG, GIF): "))
+            print("""\033[1mCAMBIOS GUARDADOS!!!.\033[0m
+                  """)
+            imagen.save(f"{nuevo_nombre}.{extencion}")
+        elif opcion == "7":
+            print("""\033[1mSALIENDO DEL PROGRAMA. CHAU!
+                  \033[0m
+                  """)
             break
         else:
-            print("OPCIÓN NO VALIDA. INTENTE DE NUEVO.")
+            print("""\033[1mOPCIÓN NO VALIDA. INTENTE DE NUEVO. \033[0m
+                  """)
 
         
 if __name__ == "__main__":
