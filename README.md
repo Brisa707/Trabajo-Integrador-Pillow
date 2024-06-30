@@ -19,13 +19,13 @@ Vamos a suponer que el problema que deseas resolver es aplicar filtros y realiza
 - `main.py`: Archivo principal que ejecuta las operaciones de manipulación de imágenes.
 - `image_operations.py`: Contiene funciones para realizar operaciones específicas en las imágenes.
 - `utils.py`: Funciones auxiliares para cargar y guardar imágenes.
-- 'Agrandado.py'
-- 'Gris.py'
-- Menú.py
-- Almohada.py
-- Programa_Menú.py
-- Rotar.py
-- fusión-del-menu.py
+- `Agrandado.py`: Este archivo contiene la función para agrandar una imagen. Permite aumentar el tamaño de una imagen por un factor especificado.
+- `Gris.py`:Este archivo contiene la función para convertir una imagen a escala de grises.
+- `Menú.py`: Este archivo gestiona la interfaz del menú que permite al usuario seleccionar diferentes operaciones de manipulación de imágenes.
+- `Pillow.py`: Este archivo incluye la configuración básica y las importaciones necesarias de la biblioteca Pillow. También puede contener funciones comunes que se utilizan en otros archivos.
+- `Programa_Menu.py`: Este archivo contiene la lógica principal del programa que ejecuta el menú y llama a las funciones correspondientes según la selección del usuario.
+- `Rotar.py`:Este archivo contiene la función para rotar una imagen a un ángulo especificado.
+- `fusión-del-menu.py`:Este archivo fusiona todas las opciones del menú en una interfaz coherente, permitiendo al usuario ejecutar múltiples operaciones de manipulación de imágenes desde un solo punto de entrada.
 - `README.md`: Documentación del proyecto.
 
 # Requisitos
