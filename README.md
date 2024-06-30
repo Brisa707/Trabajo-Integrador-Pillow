@@ -19,6 +19,13 @@ Vamos a suponer que el problema que deseas resolver es aplicar filtros y realiza
 - `main.py`: Archivo principal que ejecuta las operaciones de manipulación de imágenes.
 - `image_operations.py`: Contiene funciones para realizar operaciones específicas en las imágenes.
 - `utils.py`: Funciones auxiliares para cargar y guardar imágenes.
+- Agrandado.py
+- Gris.py
+- Menú.py
+- Almohada.py
+- Programa_Menú.py
+- Rotar.py
+- fusión-del-menu.py
 - `README.md`: Documentación del proyecto.
 
 # Requisitos
