@@ -12,7 +12,7 @@
 
 # Desarrollo de código fuente
 Problema puntual:
-Vamos a suponer que el problema que deseas resolver es aplicar filtros y realizar transformaciones básicas en una imagen, como cambiar su tamaño, recortarla, y convertirla a escala de grises.
+Vamos a suponer que el problema para resolver es aplicar filtros y realizar transformaciones básicas en una imagen, como cambiar su tamaño, recortarla, y convertirla a escala de grises. Además, en base a esas funciones vamos a desarrollar un menú interactivo que facilita estas operaciones.
 
 # Archivos
 
